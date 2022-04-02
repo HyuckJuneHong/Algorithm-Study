@@ -13,20 +13,20 @@ public class 프린터 {
             que.add(i);
         }
 
-        Arrays.sort(priorities);
+        Arrays.sort(priorities); // 1 1 1 1 1 9
         int size = priorities.length-1;
 
         while(!que.isEmpty()){
-            Integer i = que.poll();
-            if(i == priorities[size - answer]){
+            Integer i = que.poll();// 1 1 9 1 1 1
+            if(i == priorities[size - answer]){ //1 9
                 answer++;
-                l--;
-                if(l <0)
+                l--;  //
+                if(l < 0)
                     break;
             }else{
                 que.add(i);
                 l--;
-                if(l<0)
+                if(l<0) //
                     l=que.size()-1;
             }
         }
