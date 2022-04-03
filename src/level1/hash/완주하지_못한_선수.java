@@ -1,4 +1,4 @@
-package level2;
+package level1.hash;
 
 import java.util.HashMap;
 import java.util.Map;
