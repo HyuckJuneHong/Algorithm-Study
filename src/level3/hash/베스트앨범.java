@@ -1,31 +1,48 @@
 package level3.hash;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class 베스트앨범 {
 
     public int[] solution(String[] genres, int[] plays) {
-        int[] answer = {};
 
-        Map<String, Integer> map = new HashMap<>();
-        Map<Integer, String> indexMap = new HashMap<>();
+        List<Integer> answerList = new ArrayList<>();
+
+        Map<String, Integer> genresMap = new HashMap<>();
+        Map<Integer, Integer> playsMap = new HashMap<>();
 
         for(int i=0; i<genres.length; i++){
-            if(map.containsKey(genres[i])){
-                map.put(genres[i], map.get(genres[i]) + plays[i]);
+            if(genresMap.containsKey(genres[i])){
+                genresMap.put(genres[i], genresMap.get(genres[i]) + plays[i]);
             }else{
-                map.put(genres[i], plays[i]);
+                genresMap.put(genres[i], plays[i]);
             }
-            indexMap.put(i, genres[i]);
+            playsMap.put(i, plays[i]);
         }
 
-        String[] sortMap = map.keySet().toArray(new String[0]);
-        Arrays.sort(sortMap, (key1, key2) -> map.get(key1) - map.get(key2));
+        List<Map.Entry<String, Integer>> genresEntryList = new ArrayList<>(genresMap.entrySet());
+        genresEntryList.sort((o1, o2) -> o2.getValue() - o1.getValue());
 
-        //To do ..... 너무 어렵다.
+        List<Map.Entry<Integer, Integer>> playEntryList = new ArrayList<>(playsMap.entrySet());
+        playEntryList.sort((o1, o2) -> o2.getValue() - o1.getValue());
+
+        for (Map.Entry<String, Integer> genresEntry : genresEntryList){
+            int count = 0;
+            for(Map.Entry<Integer, Integer> playEntry : playEntryList){
+                if(genres[playEntry.getKey()].equals(genresEntry.getKey())){
+                    answerList.add(playEntry.getKey());
+                    count++;
+                    if(count == 2){
+                        break;
+                    }
+                }
+            }
+        }
+
+        int[] answer = new int[answerList.size()];
+        for(int i=0; i< answerList.size(); i++){
+            answer[i] = answerList.get(i);
+        }
 
         return answer;
     }
