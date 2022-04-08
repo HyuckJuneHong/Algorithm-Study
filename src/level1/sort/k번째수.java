@@ -1,4 +1,4 @@
-package level1;
+package level1.sort;
 
 import java.util.ArrayList;
 import java.util.Arrays;
