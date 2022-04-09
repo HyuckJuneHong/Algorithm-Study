@@ -2,23 +2,21 @@ package level2.sort;
 
 import java.util.*;
 
-public class K번째수 {
+public class 가장큰수 {
     public String solution(int[] numbers) {
         String answer = "";
 
+        List<Integer> numbersList = new ArrayList<>();
         Map<Integer, Integer> numbersMap = new HashMap<>();
 
-        List<Integer> numbersList = new ArrayList<>();
         for(int i : numbers){
             numbersList.add(i);
         }
-        numbersList.sort(Collections.reverseOrder());
+        numbersList.sort((o1, o2) ->  Integer.parseInt("" + o2 + o1) - Integer.parseInt("" + o1+o2));
 
         for(int i=0; i<numbersList.size(); i++){
-            if(numbersList.get(i) >= 10){
-                numbersMap.put(i, numbersList.get(i)/10);
-            }else{
-                numbersMap.put(i, numbersList.get(i));
+            for(int j=0; j<numbersList.size(); j++){
+
             }
         }
 
