@@ -5,6 +5,7 @@ import java.util.Queue;
 
 public class 다리를_지나는_트럭 {
     public int solution(int bridge_length, int weight, int[] truck_weights) {
+
         int answer = 0, totalWeight = 0;
 
         Queue<Integer> bridgeQ = new LinkedList<>();
@@ -26,7 +27,6 @@ public class 다리를_지나는_트럭 {
                 break;
             }else{
                 if(readyQ.peek() + totalWeight <= weight){
-
                     totalWeight += readyQ.peek();
                     bridgeQ.offer(readyQ.poll());
                 }else{
