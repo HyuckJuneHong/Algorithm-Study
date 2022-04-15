@@ -1,4 +1,4 @@
-package level2;
+package level2.DFS_BFS;
 
 public class 타겟_넘버 {
     public int solution(int[] numbers, int target) {
