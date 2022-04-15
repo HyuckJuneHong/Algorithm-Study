@@ -28,8 +28,8 @@ public class 모의고사 {
         List<Map.Entry<Integer, Integer>> listMap = new ArrayList<>(map.entrySet());
         listMap.sort((o1, o2) -> o2.getValue() - o1.getValue());
 
-        Integer max = listMap.get(0).getValue();
         List<Integer> list = new ArrayList<>();
+        Integer max = listMap.get(0).getValue();
 
         for(Map.Entry<Integer, Integer> m : listMap){
             if(m.getValue().equals(max)){
