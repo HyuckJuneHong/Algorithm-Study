@@ -20,8 +20,6 @@ public class H_Index {
                 answer++;
             }
         }
-
-
         return answer;
     }
 
