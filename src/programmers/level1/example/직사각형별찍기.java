@@ -1,4 +1,4 @@
-package programmers.level1;
+package programmers.level1.example;
 
 import java.util.Scanner;
 import java.util.stream.IntStream;
