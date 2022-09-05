@@ -1,4 +1,4 @@
-package Hackers.ict;
+package hackerRank.ict;
 
 import java.util.Collections;
 import java.util.List;

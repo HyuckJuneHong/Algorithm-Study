@@ -1,4 +1,4 @@
-package Hackers.medium;
+package hackerRank.medium;
 
 import java.util.*;
 import java.util.stream.Collectors;

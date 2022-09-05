@@ -1,4 +1,4 @@
-package Hackers.ict;
+package hackerRank.ict;
 
 public class Ex2 {
 

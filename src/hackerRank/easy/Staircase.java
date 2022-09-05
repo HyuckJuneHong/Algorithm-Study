@@ -1,4 +1,4 @@
-package Hackers.easy;
+package hackerRank.easy;
 
 public class Staircase {
     public static void staircase(int n) {

@@ -1,4 +1,4 @@
-package Hackers.easy;
+package hackerRank.easy;
 
 import java.util.List;
 
