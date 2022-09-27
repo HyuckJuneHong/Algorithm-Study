@@ -1,7 +1,5 @@
 package java_algorithm_study.string;
 
-import java_algorithm_study.Main;
-
 import java.util.Scanner;
 
 public class Test3_암호 {

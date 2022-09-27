@@ -1,4 +1,4 @@
-package java_algorithm_study;
+package java_algorithm_study.string;
 
 import java.util.Scanner;
 
