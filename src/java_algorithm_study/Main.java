@@ -13,9 +13,9 @@ public class Main {
         Scanner kb = new Scanner(System.in);
         int n=kb.nextInt();
 
-        int[] a=new int[n];
+        int[] arr=new int[n];
         for(int i=0; i<n; i++){
-            a[i]=kb.nextInt();
+            arr[i]=kb.nextInt();
         }
     }
 }
