@@ -1,4 +1,4 @@
-package java_algorithm_study.dfs;
+package java_algorithm_study.dfs_조합수_메모이제이션;
 
 import java.util.Scanner;
 

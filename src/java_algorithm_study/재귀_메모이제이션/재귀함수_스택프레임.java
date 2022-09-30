@@ -1,4 +1,4 @@
-package java_algorithm_study.재귀;
+package java_algorithm_study.재귀_메모이제이션;
 
 /** 재귀는 Stack Frame 이다. (매개, 지역, 복귀)
  *

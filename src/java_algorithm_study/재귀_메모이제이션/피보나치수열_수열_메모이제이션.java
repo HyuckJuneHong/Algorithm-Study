@@ -1,4 +1,4 @@
-package java_algorithm_study.재귀;
+package java_algorithm_study.재귀_메모이제이션;
 
 /**
  * 재귀로 피보나치 수열을 구현하면 시간복잡도가 매우 오래 걸림

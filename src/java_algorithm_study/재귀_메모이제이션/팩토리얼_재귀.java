@@ -1,4 +1,4 @@
-package java_algorithm_study.재귀;
+package java_algorithm_study.재귀_메모이제이션;
 
 public class 팩토리얼_재귀 {
 

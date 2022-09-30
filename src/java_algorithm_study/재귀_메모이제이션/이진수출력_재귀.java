@@ -1,4 +1,4 @@
-package java_algorithm_study.재귀;
+package java_algorithm_study.재귀_메모이제이션;
 
 public class 이진수출력_재귀 {
 

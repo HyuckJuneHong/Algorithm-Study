@@ -1,4 +1,4 @@
-package java_algorithm_study.경로탐색_dfs_bfs_ArrayList;
+package java_algorithm_study.dfs_bfs_경로탐색_행렬_리스트;
 
 import java.util.Scanner;
 

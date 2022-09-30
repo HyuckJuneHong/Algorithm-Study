@@ -1,7 +1,6 @@
-package java_algorithm_study.bfs;
+package java_algorithm_study.dfs_bfs_경로탐색_행렬_리스트;
 
 import java_algorithm_study.Node;
-import java_algorithm_study.dfs.Tree_말단노드까지_가장_짧은_경로_dfs;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package java_algorithm_study.dfs;
+package java_algorithm_study.dfs_bfs_경로탐색_행렬_리스트;
 
 import java_algorithm_study.Node;
 
