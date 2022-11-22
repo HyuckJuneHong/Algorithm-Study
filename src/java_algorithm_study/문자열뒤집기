@@ -1,0 +1,40 @@
+//StringBuilder 뒤집기
+String answer = new StringBuilder(str).reverse().toString();
+
+//숫자 찾기
+Character.isDigit(c);
+
+//logic
+String[] str = new String[5];
+List<String> answer = new ArrayList<>();
+
+for(String x : str){
+    char[] c = x.toCharArray();
+    int lt = 0;
+    int rt = x.length()-1;
+
+    while(lt < rt){
+        char temp = c[lt];
+        c[lt] = c[rt];
+        c[rt] = temp;
+        lt++;
+        rt--;
+    }
+    String tempS = String.valueOf(c);
+    answer.add(tempS);
+}
+
+//알파벳만 뒤집기
+while(lt < rt){
+    if(!Character.isAlphabetic(c[lt])){
+        lt++;
+    }else if(!Character.isAlphabetic(c[rt])){
+        rt--;
+    }else{
+        char temp = c[lt];
+        c[lt] = c[rt];
+        c[rt] = temp;
+        lt++;
+        rt--;
+    }
+}

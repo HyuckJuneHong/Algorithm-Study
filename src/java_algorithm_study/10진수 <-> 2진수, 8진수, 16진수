@@ -1,0 +1,17 @@
+int num = 10;
+
+String num2 = Integer.toBinaryString(num);  //10진수 -> 2진수
+String num8 = Integer.toOctalString(num);   //10진수 -> 8진수
+String num16 = Integer.toHexString(num);    //10진수 -> 16진수
+
+int num2_10 = Integer.parseInt(num2, 2);    //2진수 -> 10진수
+int num8_10 = Integer.parseInt(num8, 8);    //8진수 -> 10진수
+int num16_10 = Integer.parseInt(num16, 16); //16진수 -> 10진수
+
+//replace() 활용
+String answer = "";
+String str = "#**#*#*";
+String temp = str.subString(0, 7).replace('#', '1').replace('*', '0');
+int num = Integer.parseInt(temp, 2);
+
+answer += (char) num);

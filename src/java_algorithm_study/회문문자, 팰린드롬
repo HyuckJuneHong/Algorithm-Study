@@ -1,0 +1,12 @@
+//앞뒤 똑같은 문자열
+String s = bufferedReader.readLine();
+String temp = new StringBuilder(s).reverse().toString();
+
+if(s.equalsIgnoreCase(temp)) {
+    System.out.println("YES");
+}else{
+    System.out.println("NO");
+}
+
+//정규식 이용
+s = s.toUpperCase().replaceAll("[^A-Z]", "");
