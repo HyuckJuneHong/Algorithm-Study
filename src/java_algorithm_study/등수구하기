@@ -1,0 +1,8 @@
+//중첩 반복문
+for(int i=0; i<n; i++){
+    int cnt=1;
+    for(int j=0; j<n; j++){
+        if(arr[j] > arr[i]) cnt++;
+    }
+    stringBuilder.append(cnt + " ");
+}

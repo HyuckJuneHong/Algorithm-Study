@@ -1,3 +1,4 @@
+//아리토스테네스 체
 arr = new int[n+1];
 int cnt = 0;
 Arrays.fill(arr, 0);
@@ -9,4 +10,52 @@ for(int i=2; i<=n; i++){
             arr[j] = 1;
         }
     }
+}
+
+//그냥 소수 구하는 함수
+boolean isPrime(int num){
+    if(num==1) return false;
+    for(int i=2; i<num; i++){
+        if(num%i) return false;
+    }
+    return true;
+}
+
+//소수 뒤집기
+public static void main(String[] args) throws IOException {
+    int n = Integer.parseInt(bufferedReader.readLine());
+    String s = bufferedReader.readLine();
+    StringTokenizer stringTokenizer = new StringTokenizer(s);
+
+    List<Integer> list = new ArrayList<>();
+
+    int max = Integer.MIN_VALUE;
+    for(int i=0; i<n; i++){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(stringTokenizer.nextToken());
+        stringBuilder.reverse();
+        int cur = Integer.parseInt(stringBuilder.toString());
+        max = Math.max(max, cur);
+        list.add(cur);
+    }
+
+    int[] arr = new int[max+1];
+    arr[0] = 1;
+    arr[1] = 1;
+    StringBuilder stringBuilder = new StringBuilder();
+    for(int i=2; i<=max; i++){
+        if(arr[i] == 0){
+            for(int j=i+i; j<=max; j+=i){
+                arr[j] = 1;
+            }
+        }
+    }
+
+    for(int i=0; i<n; i++){
+        if(arr[list.get(i)] == 0)
+            stringBuilder.append(list.get(i) + " ");
+    }
+
+    System.out.println(stringBuilder);
+    bufferedReader.close();
 }
