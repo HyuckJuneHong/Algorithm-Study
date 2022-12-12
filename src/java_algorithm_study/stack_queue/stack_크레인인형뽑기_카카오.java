@@ -1,4 +1,4 @@
-package java_algorithm_study.stack;
+package java_algorithm_study.stack_queue;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-public class 크레인인형뽑기_카카오_stack {
+public class stack_크레인인형뽑기_카카오 {
     static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
     static StringBuilder stringBuilder = new StringBuilder();
 

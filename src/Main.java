@@ -2,61 +2,62 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
     static StringBuilder stringBuilder = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
-        int n = Integer.parseInt(bufferedReader.readLine());
-        String[] s = new String[n];
+        String s = bufferedReader.readLine();
+        int n = Integer.parseInt(s.split(" ")[0]);
+        int k = Integer.parseInt(s.split(" ")[1]);
+        s = bufferedReader.readLine();
+        StringTokenizer stringTokenizer = new StringTokenizer(s);
+        int[] arr = new int[n];
         for(int i=0; i<n; i++){
-            s[i] = bufferedReader.readLine();
+            arr[i] = Integer.parseInt(stringTokenizer.nextToken());
         }
 
-        Stack<Integer>[] stacks = new Stack[n];
+        Queue<Person> queue = new LinkedList<>();
         for(int i=0; i<n; i++){
-            stacks[i] = new Stack<>();
+            queue.offer(new Person(i, arr[i]));
         }
-        for(int i=0; i<n; i++){
-            StringTokenizer stringTokenizer = new StringTokenizer(s[n-i-1]);
-            for(int j=0; j<n; j++){
-                int num = Integer.parseInt(stringTokenizer.nextToken());
-                if(num != 0){
-                    stacks[j].push(num);
+
+        int cnt = 1;
+        while(!queue.isEmpty()){
+            Person temp = queue.poll();
+            for(Person p : queue){
+                if(p.priority > temp.priority){
+                    queue.offer(temp);
+                    temp = null;
+                    break;
                 }
             }
-        }
 
-        int m = Integer.parseInt(bufferedReader.readLine());
-        String move =  bufferedReader.readLine();
-        int[] moves = new int[m];
-        StringTokenizer stringTokenizer = new StringTokenizer(move);
-        for(int i=0; i<m; i++){
-            moves[i] = Integer.parseInt(stringTokenizer.nextToken());
-        }
-
-        int cnt = 0;
-        Stack<Integer> stack = new Stack<>();
-        for(int i : moves){
-            if(!stacks[i-1].isEmpty()){
-                if(!stack.isEmpty()){
-                    if (stack.peek() == stacks[i-1].peek()){
-                        cnt++;
-                        stack.pop();
-                        stacks[i-1].pop();
-                    }
-                    else if (stack.peek() != stacks[i-1].peek()){
-                        stack.push(stacks[i-1].pop());
-                    }
+            if(temp != null){
+                if(temp.id == k) {
+                    stringBuilder.append(cnt);
+                    break;
                 }else{
-                    stack.push(stacks[i-1].pop());
+                    cnt++;
                 }
             }
         }
 
-        stringBuilder.append(cnt*2);
+
+
         System.out.println(stringBuilder);
         bufferedReader.close();
+    }
+}
+
+class Person{
+    int id;
+    int priority;
+
+    public Person(int id, int priority) {
+        this.id = id;
+        this.priority = priority;
     }
 }

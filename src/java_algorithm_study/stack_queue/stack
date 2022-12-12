@@ -1,0 +1,53 @@
+//올바른 괄호
+for(Character c : s.toCharArray()){
+    if(c.equals('(')) stack.push(c);
+    else{
+        if(stack.isEmpty()){
+            System.out.println("NO");
+            return;
+        }
+        stack.pop();
+    }
+}
+if(!stack.isEmpty()) System.out.println("NO");
+else System.out.println("YES");
+
+//괄호 문자 제거
+for(Character c : s.toCharArray()){
+    if(c.equals('(')) stack.push(c);
+    else if(c.equals(')')) stack.pop();
+    else if(stack.isEmpty()) stringBuilder.append(c);
+}
+//괄호 문자 제거
+for(Character c : s.toCharArray()){
+    if(c.equals(')')){
+        while (stack.pop() != '(');
+    }else stack.push(c);
+}
+for(int i=0; i<stack.size(); i++) stringBuilder.append(stack.get(i));
+
+//후위식 연산
+for(char c : s.toCharArray()){
+    if(Character.isDigit(c)){
+        stack.push(Integer.parseInt(c+""));
+    }else{
+        n2 = stack.pop();
+        n1 = stack.pop();
+        if(c=='+') stack.push(n1+n2);
+        else if(c=='-') stack.push(n1-n2);
+        else if(c=='/') stack.push(n1/n2);
+        else result = stack.push(n1*n2);
+    }
+}
+stringBuilder.append(stack.pop());
+
+//쇠막대기
+int cnt = 0;
+for(int i=0; i<s.length(); i++){
+    if(s.charAt(i)=='(') stack.push('(');
+    else{
+        stack.pop();
+        if(s.charAt(i-1) == '(') cnt += stack.size();
+        else cnt += 1;
+    }
+}
