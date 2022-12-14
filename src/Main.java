@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 import java.util.stream.Collectors;
 
+
 public class Main {
     static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
     static StringBuilder stringBuilder = new StringBuilder();
@@ -13,51 +14,32 @@ public class Main {
         int n = Integer.parseInt(s.split(" ")[0]);
         int k = Integer.parseInt(s.split(" ")[1]);
         s = bufferedReader.readLine();
+        int[] arr = new int[k];
+
         StringTokenizer stringTokenizer = new StringTokenizer(s);
-        int[] arr = new int[n];
-        for(int i=0; i<n; i++){
+        for(int i=0; i<k; i++){
             arr[i] = Integer.parseInt(stringTokenizer.nextToken());
         }
 
-        Queue<Person> queue = new LinkedList<>();
+        Queue<Integer> queue = new LinkedList<>();
+        for(int i=0; i<k; i++){
+            if(queue.contains(arr[i])){
+                queue.remove(arr[i]);
+            }
+            queue.offer(arr[i]);
+            if(queue.size() > n){
+                queue.poll();
+            }
+        }
+
+        int[] answer = new int[n];
+        for(int i=n-1; i>=0; i--){
+            answer[i] = queue.poll();
+        }
         for(int i=0; i<n; i++){
-            queue.offer(new Person(i, arr[i]));
+            stringBuilder.append(answer[i]+" ");
         }
-
-        int cnt = 1;
-        while(!queue.isEmpty()){
-            Person temp = queue.poll();
-            for(Person p : queue){
-                if(p.priority > temp.priority){
-                    queue.offer(temp);
-                    temp = null;
-                    break;
-                }
-            }
-
-            if(temp != null){
-                if(temp.id == k) {
-                    stringBuilder.append(cnt);
-                    break;
-                }else{
-                    cnt++;
-                }
-            }
-        }
-
-
-
         System.out.println(stringBuilder);
         bufferedReader.close();
-    }
-}
-
-class Person{
-    int id;
-    int priority;
-
-    public Person(int id, int priority) {
-        this.id = id;
-        this.priority = priority;
     }
 }

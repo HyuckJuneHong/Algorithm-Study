@@ -19,4 +19,40 @@ for(int i=k; i<n; i++){
     max = Math.max(max, sum);
 }
 
+//매출액 종류 (해쉬)
+for(int i=0; i<k-1; i++){
+    map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+}
+
+int lt=0;
+for(int rt=k-1; rt<n; rt++){
+    map.put(arr[rt], map.getOrDefault(arr[rt], 0) + 1);
+    stringBuilder.append(map.size() + " ");
+    map.put(arr[lt], map.get(arr[lt])-1);
+    if(map.get(arr[lt]) == 0) map.remove(arr[lt]);
+    lt++;
+}
+
+//아나그램 (해쉬) 시간복잡도: O(n)
+int mSize = m.length()-1;
+for(char c : m.toCharArray()){
+    map.put(c, map.getOrDefault(c, 0) + 1);
+}
+for(int i=0; i<mSize; i++){
+    temp.put(str.charAt(i), temp.getOrDefault(str.charAt(i), 0) + 1);
+}
+
+int cnt = 0, lt=0;
+for(int rt=mSize; rt<str.length(); rt++){
+    temp.put(str.charAt(rt), temp.getOrDefault(str.charAt(rt), 0) + 1);
+    if(map.equals(temp))
+        cnt++;
+    temp.put(s.charAt(lt), temp.get(s.charAt(lt))-1);
+    if(temp.get(str.charAt(lt)) == 0)
+        temp.remove(str.charAt(lt));
+    lt++;
+}
+
+
+
 

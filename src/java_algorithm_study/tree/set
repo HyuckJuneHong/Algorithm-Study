@@ -1,0 +1,23 @@
+//K번째 큰 수 (트리셋)
+Set<Integer> set = new TreeSet<>(Collections.reverseOrder());
+for(int i=0; i<n; i++){
+    for(int j=i+1; j<n; j++){
+        for(int z=j+1; z<n; z++){
+            set.add(arr[i] + arr[j] + arr[z]);
+        }
+    }
+}
+
+if(set.size() < k) {
+    System.out.println("-1");
+    return;
+}
+
+int cnt=0;
+for(int i : set){
+    cnt++;
+    if(cnt==k) {
+        stringBuilder.append(i);
+        break;
+    }
+}
