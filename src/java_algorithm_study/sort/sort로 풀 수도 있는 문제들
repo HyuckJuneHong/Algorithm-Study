@@ -1,0 +1,25 @@
+//중복 확인 문제 -> 시간복잡도 : nlogn로 풀 수 있기 때문에 풀어보는 연습
+public String solution(int n, int[] arr){
+    Arrays.sort(arr);
+    for(int i=0; i<n-1; i++){
+        if(arr[i] == arr[i+1]){
+            return "D";
+        }
+    }
+    return "U";
+}
+
+//장난꾸러기
+public ArrayList<Integer> solution(int n, int[] arr){
+    ArrayList<Integer> list = new ArrayList<>();
+    int[] temp = arr.clone();
+    Arrays.sort(temp);
+
+    for(int i=0; i<n; i++){
+        if(arr[i] != temp[i]){
+            list.add(i+1);
+        }
+    }
+
+    return list;
+}

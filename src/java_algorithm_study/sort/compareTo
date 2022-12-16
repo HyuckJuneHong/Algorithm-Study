@@ -1,0 +1,44 @@
+//좌표정렬 -> 익명 클래스
+class Base{
+    int a, b;
+
+    public Base(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+}
+    List<Base> list = new ArrayList<>();
+    for(int i=0; i<n; i++){
+        int a = Integer.parseInt(s[i].split(" ")[0]);
+        int b = Integer.parseInt(s[i].split(" ")[1]);
+        list.add(new Base(a, b));
+    }
+    //오름차순
+    Collections.sort(list, ((o1, o2) -> {
+        if(o1.a == o2.a) return o1.b - o2.b;
+        return o1.a - o2.a;
+    }));
+
+
+//좌표정렬 Comparable<Base>
+class Base implements Compareable<Base>{
+    int a, b;
+
+    public Base(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+    //오름차순
+    @Override
+    public int compareTo(Base o){
+        if(this.x == o.x) return this.y-o.y;
+        return this.x - o.x;
+    }
+}
+    List<Base> list = new ArrayList<>();
+    for(int i=0; i<n; i++){
+        int a = Integer.parseInt(s[i].split(" ")[0]);
+        int b = Integer.parseInt(s[i].split(" ")[1]);
+        list.add(new Base(a, b));
+    }
+    Collections.sort(list);

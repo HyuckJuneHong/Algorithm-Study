@@ -1,4 +1,4 @@
-package java_algorithm_study;
+package java_algorithm_study.sort;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -62,27 +62,25 @@ public class Least_Recently_Used_카카오_변형_캐시 {
 }
 
 /**
- * Queue로 푼 문제
- *         Queue<Integer> queue = new LinkedList<>();
- *         for(int i=0; i<k; i++){
- *             if(queue.contains(arr[i])){
- *                 queue.remove(arr[i]);
- *             }
- *             queue.offer(arr[i]);
- *             if(queue.size() > n){
- *                 queue.poll();
- *             }
- *         }
+ * <Queue 로 푼 답>
+ *  Queue<Integer> queue = new LinkedList<>();
+ *  for(int i=0; i<k; i++){
+ *      if(queue.contains(arr[i])){
+ *          queue.remove(arr[i]);
+ *      }
+ *      queue.offer(arr[i]);
+ *      if(queue.size() > n){
+ *          queue.poll();
+ *      }
+ *  }
  *
- *         int[] answer = new int[n];
- *         for(int i=n-1; i>=0; i--){
- *             answer[i] = queue.poll();
- *         }
- *         for(int i=0; i<n; i++){
- *             stringBuilder.append(answer[i]+" ");
- *         }
- *         System.out.println(stringBuilder);
- *         bufferedReader.close();
- *     }
- * }
+ *  int[] answer = new int[n];
+ *  for(int i=n-1; i>=0; i--){
+ *      answer[i] = queue.poll();
+ *  }
+ *  for(int i=0; i<n; i++){
+ *    stringBuilder.append(answer[i]+" ");
+ *  }
+ *  System.out.println(stringBuilder);
+ *  bufferedReader.close();
  */

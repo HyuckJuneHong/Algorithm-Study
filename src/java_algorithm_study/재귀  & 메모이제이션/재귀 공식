@@ -1,0 +1,37 @@
+public void rec(int n){
+    if(n==0) return;
+
+    rec(n-1);
+    System,out.println(n);
+}
+public void main{
+    rec(5);
+}
+
+<rec 흐름 실행 및 반환 순서>
+4. rec(0)               -> 1.호출 - line2
+3. rec(1) - line 4      -> 2.호출 - line6
+2. rec(2) - line 4      -> 3.호출 - line6
+1. rec(3) - line 4      -> 4.호출 - line6 - line 9
+
+
+//이진수 출력 재귀
+public void rec(int n){
+    if(n==0) return;
+
+    System,out.println(n%2);
+    rec(n/2);
+}
+public void main{
+    rec(11);
+}
+
+//팩토리얼 재귀
+public int rec(int n){
+    if(n==1) return 1;
+
+    return n*rec(n-1);
+}
+public void main{
+    System.out.println(rec(5));
+}
