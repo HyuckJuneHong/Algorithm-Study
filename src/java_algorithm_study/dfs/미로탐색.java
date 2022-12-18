@@ -50,4 +50,6 @@ public class 미로탐색 {
         System.out.println(answer);
         bufferedReader.close();
     }
+
+
 }
