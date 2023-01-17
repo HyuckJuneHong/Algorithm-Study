@@ -1,7 +1,8 @@
+package programmers.level2.test;
+
 import java.util.Stack;
 
-class Solution {
-
+public class 영어끝말잇기_Summer_Winter_Coding {
     /**
      * @param n : 참가자 수
      * @param words : 단어들
