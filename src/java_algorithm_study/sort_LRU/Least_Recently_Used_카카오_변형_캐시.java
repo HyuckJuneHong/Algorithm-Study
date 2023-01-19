@@ -1,4 +1,4 @@
-package java_algorithm_study.sort;
+package java_algorithm_study.sort_LRU;
 
 import java.io.BufferedReader;
 import java.io.IOException;

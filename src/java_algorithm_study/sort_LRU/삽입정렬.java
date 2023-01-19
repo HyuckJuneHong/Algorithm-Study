@@ -1,4 +1,4 @@
-package java_algorithm_study.sort;
+package java_algorithm_study.sort_LRU;
 
 public class 삽입정렬  {
     static int size;                        //Array Size
