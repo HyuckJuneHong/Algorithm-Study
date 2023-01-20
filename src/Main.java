@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
-
+//recursion
 public class Main {
     static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
     static StringBuilder stringBuilder = new StringBuilder();
