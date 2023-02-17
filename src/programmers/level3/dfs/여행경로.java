@@ -1,6 +1,10 @@
-import java.util.*;
+package programmers.level3.dfs;
 
-class Solution {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class 여행경로 {
     static boolean[] visited;
     static List<String> list = new ArrayList<>();
 
@@ -40,5 +44,4 @@ class Solution {
             }
         }
     }
-
 }
